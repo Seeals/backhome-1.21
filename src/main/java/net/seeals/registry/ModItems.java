@@ -1,12 +1,11 @@
 package net.seeals.registry;
 
-import net.fabricmc.fabric.api.item.v1.FabricItem;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.seeals.BackHome;
-import net.seeals.item.ModArtifactItem;
+import net.seeals.item.artifact.ModArtifactItem;
 
 public class ModItems{
 
