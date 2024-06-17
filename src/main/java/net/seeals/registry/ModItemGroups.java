@@ -17,6 +17,8 @@ public class ModItemGroups {
                     .icon(() -> new ItemStack(Items.BUCKET)).entries((displayContext, entries) -> {
                         entries.add(ModItems.ARTIFACT);
                         entries.add(ModBlocks.BRAZIER);
+                        entries.add(ModItems.DREAM_SHARD);
+                        entries.add(ModItems.LIQUID_DREAM);
 
                     }).build());
 

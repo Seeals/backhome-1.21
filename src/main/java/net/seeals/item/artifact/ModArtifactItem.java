@@ -55,6 +55,8 @@ public class ModArtifactItem extends Item implements GeoItem {
         return cache;
     }
 
+
+
     //hold m4
 
     public void onClose(ItemStack stack, World world, PlayerEntity player) {
@@ -96,24 +98,24 @@ public class ModArtifactItem extends Item implements GeoItem {
         }
     }
     //TODO THIS FUCKING registerEventListeners IS ON CLIENT SIDE CUS EVERYTHING IS ON CLIENT SIDE BUT THE FUCKING ANIMATION REQUIRES THE WORLD DATA TO BE ON THE SERVER SIDE AND FUUUUUUUUCK FIX IT PLEASE
-    //Event listener to handle left-click actions (bro :c) Keep in mind that this only detects on the off hand but we want it to work on both hand so TODO here lol
+    //Event listener to handle left-click actions (bro :c) Keep in mind that this only detects on the off hand but we want it to work on both hands so TODO here lol
     public static void registerEventListeners() {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            if (client.player != null && ModKeyBindings.closeKey != null && ModKeyBindings.focusKey != null) {
+            if (client.player != null) {
                 ItemStack stack = client.player.getOffHandStack();
                 if (stack.getItem() instanceof ModArtifactItem) {
                     ModArtifactItem item = (ModArtifactItem) stack.getItem();
-                    boolean rightKeyPressed = ModKeyBindings.closeKey.isPressed();
-                    boolean leftKeyPressed = ModKeyBindings.focusKey.isPressed();
+                    boolean closeKeyPressed = ModKeyBindings.closeKey.isPressed();
+                    boolean focusKeyPressed = ModKeyBindings.focusKey.isPressed();
 
-                    if (rightKeyPressed) {
+                    if (closeKeyPressed) {
                         item.onClose(stack, client.world, client.player);
                         BackHome.LOGGER.info("Close key is pressed");
                     } else {
                         item.onReleasedClose(stack, client.world, client.player);
                         BackHome.LOGGER.info("Close key is released");
                     }
-                    if (leftKeyPressed) {
+                    if (focusKeyPressed) {
                         item.onFocus(stack, client.world, client.player);
                         BackHome.LOGGER.info("Focus key is pressed");
                     } else {

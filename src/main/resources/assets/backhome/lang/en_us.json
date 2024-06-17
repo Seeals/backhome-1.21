@@ -2,6 +2,9 @@
   "itemgroup.items": "Back Home",
 
   "item.backhome.artifact": "Artifact",
+  "item.backhome.dream_shard": "Dream Shard",
+  "item.backhome.liquid_dream": "Filled Bottle of Liquid Dream",
+  "item.backhome.partial_liquid_dream": "Bottle of Liquid Dream",
 
   "block.backhome.brazier": "Brazier",
 
