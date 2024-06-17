@@ -3,5 +3,11 @@
 
   "item.backhome.artifact": "Artifact",
 
-  "block.backhome.brazier": "Brazier"
+  "block.backhome.brazier": "Brazier",
+
+  "key.backhome.close": "Close Artifact (Hold)",
+  "key.backhome.focus": "Focus Artifact (Hold)",
+
+  "category.backhome.controls": "Back Home"
+
 }

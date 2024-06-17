@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
 import net.seeals.BackHome;
-import net.seeals.utils.ModKeyBindings;
+import net.seeals.registry.ModKeyBindings;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.animatable.SingletonGeoAnimatable;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
@@ -55,7 +55,7 @@ public class ModArtifactItem extends Item implements GeoItem {
         return cache;
     }
 
-    //hold m3
+    //hold m4
 
     public void onClose(ItemStack stack, World world, PlayerEntity player) {
         if (!world.isClient()) {
@@ -66,7 +66,7 @@ public class ModArtifactItem extends Item implements GeoItem {
         }
     }
 
-    //released m3
+    //released m4
     public void onReleasedClose(ItemStack stack, World world, PlayerEntity player) {
         if (!world.isClient()) {
             ServerWorld serverWorld = (ServerWorld) world;
@@ -76,7 +76,7 @@ public class ModArtifactItem extends Item implements GeoItem {
         }
     }
 
-    //hold m4
+    //hold m5
     public void onFocus(ItemStack stack, World world, PlayerEntity player) {
         if (!world.isClient()) {
             ServerWorld serverWorld = (ServerWorld) world;
@@ -86,7 +86,7 @@ public class ModArtifactItem extends Item implements GeoItem {
         }
     }
 
-    //released m4
+    //released m5
     public void onReleasedFocus(ItemStack stack, World world, PlayerEntity player) {
         if (!world.isClient()) {
             ServerWorld serverWorld = (ServerWorld) world;
@@ -96,7 +96,7 @@ public class ModArtifactItem extends Item implements GeoItem {
         }
     }
     //TODO THIS FUCKING registerEventListeners IS ON CLIENT SIDE CUS EVERYTHING IS ON CLIENT SIDE BUT THE FUCKING ANIMATION REQUIRES THE WORLD DATA TO BE ON THE SERVER SIDE AND FUUUUUUUUCK FIX IT PLEASE
-    //Event listener to handle left-click actions (bro :c)
+    //Event listener to handle left-click actions (bro :c) Keep in mind that this only detects on the off hand but we want it to work on both hand so TODO here lol
     public static void registerEventListeners() {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if (client.player != null && ModKeyBindings.closeKey != null && ModKeyBindings.focusKey != null) {
