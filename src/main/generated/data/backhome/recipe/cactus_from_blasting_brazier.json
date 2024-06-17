@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "cookingtime": 500,
+  "experience": 50.0,
+  "group": "test",
+  "ingredient": {
+    "item": "backhome:brazier"
+  },
+  "result": {
+    "id": "minecraft:cactus"
+  }
+}

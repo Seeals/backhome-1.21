@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "backhome",
+	"version": "${version}",
+	"name": "BackHome",
+	"description": "A mod that let's you live in your dreams :)",
+	"authors": [
+		"Seeals",
+		"UltimaticCatz"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/backhome/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.seeals.BackHome"
+			],
+		"client": [
+			"net.seeals.BackHomeClient"
+		],
+		"fabric-datagen": [
+			"net.seeals.BackHomeDataGenerator"
+		]
+	},
+	"mixins": [
+		"backhome.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
