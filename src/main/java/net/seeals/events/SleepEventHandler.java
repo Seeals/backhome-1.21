@@ -19,7 +19,8 @@ public class SleepEventHandler {
     public static void onPlayerSleep(ServerPlayerEntity player, boolean wakeUp, boolean updateSleepingPlayers) {
         if (isNearDreamCatcher(player)) {
             for (ItemStack stack : player.getInventory().main) {
-                if (stack.isOf(Items.GLASS_BOTTLE) || stack.getItem() == ModItems.PARTIAL_LIQUID_DREAM) {
+                //TODO TO FIX, The progress will be add to other partial dream liquid in the inventory even when player is holding a glass bottle.
+                if (stack.isOf(Items.GLASS_BOTTLE) && ItemUtils.isItemInEitherHand(player) || stack.getItem() == ModItems.PARTIAL_LIQUID_DREAM && ItemUtils.isItemInEitherHand(player)) {
                     BackHome.LOGGER.info("Player is sleeping, adding progress!");
 
                     NbtComponent component = stack.get(DataComponentTypes.CUSTOM_DATA);

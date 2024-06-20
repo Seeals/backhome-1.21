@@ -12,7 +12,7 @@ public class ModItems{
 
     public static final Item ARTIFACT = registerItem("artifact", new ModArtifactItem( new Item.Settings()));
     public static final Item DREAM_SHARD = registerItem("dream_shard", new Item(new Item.Settings()));
-    public static final Item PARTIAL_LIQUID_DREAM = registerItem("partial_liquid_dream", new LiquidDreamBottle(new Item.Settings()));
+    public static final Item PARTIAL_LIQUID_DREAM = registerItem("partial_liquid_dream", new LiquidDreamBottle(new Item.Settings().maxCount(1)));
     public static final Item LIQUID_DREAM = registerItem("liquid_dream", new Item(new Item.Settings()));
 
     private static Item registerItem(String name, Item item) {

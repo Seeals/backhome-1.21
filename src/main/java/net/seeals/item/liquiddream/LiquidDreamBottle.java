@@ -13,6 +13,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.seeals.BackHome;
@@ -49,8 +50,8 @@ public class LiquidDreamBottle extends Item {
             int progress1 = nbt.getInt(TRANSFORMATION_PROGRESS_KEY);
             BackHome.LOGGER.info("Current progress (before tick): " + progress1);
 
-
-            if (stack.isOf(Items.GLASS_BOTTLE) || stack.getItem() == ModItems.PARTIAL_LIQUID_DREAM) {
+            // ticking logic, check for glass bottle or partial liquid dream to have it at atleast 1 progress
+            if (stack.isOf(Items.GLASS_BOTTLE) && ItemUtils.isItemInEitherHand(player) || stack.getItem() == ModItems.PARTIAL_LIQUID_DREAM && ItemUtils.isItemInEitherHand(player)) {
                 int progress = nbt.getInt(TRANSFORMATION_PROGRESS_KEY);
                 if (progress < 100) {
                     progress += 1;
@@ -67,7 +68,7 @@ public class LiquidDreamBottle extends Item {
                     newStack.set(DataComponentTypes.CUSTOM_DATA, NbtComponent.of(nbt));
                     ((PlayerEntity) entity).getInventory().setStack(slot, newStack);
 
-                    //TODO Fix sounds here
+                    //TODO Fix sounds here. This is playing on server side, needs to play on client side.
                     // world.playSound(null, player.getBlockPos(), SoundEvents.ITEM_BOTTLE_FILL_DRAGONBREATH, SoundCategory.PLAYERS, 2.0F, 1.0F);
 
                 }

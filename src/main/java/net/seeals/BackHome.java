@@ -25,7 +25,7 @@ public class BackHome implements ModInitializer {
 		ModItems.modItemInit();
 		ModItemGroups.modItemGroupsInit();
 
-		//register sleep event
+		//registering events
 		ServerTickEvents.END_SERVER_TICK.register(server -> {
 			for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
 				if (!player.isSpectator()) {
@@ -43,5 +43,7 @@ public class BackHome implements ModInitializer {
 				}
 			}
 		});
+
+		GlassBottleTicker.registerTickEvents();
 	}
 }
